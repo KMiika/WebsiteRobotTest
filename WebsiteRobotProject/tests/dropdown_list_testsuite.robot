@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Variables    C:/temp/WebsiteRobotProject/resources/Variables.py
+Resource    C:/temp/WebsiteRobotProject/resources/Keywords.robot
 
 *** Variables ***
 ${DROPDOWN_LIST}     xpath=//*[@id="dj-megamenu90"]/li[2]/div
@@ -32,8 +33,3 @@ Dropdown menu should be hidden when browser window is small
     Set Window Size    600    600
     Element Should Not Be Visible    ${DROPDOWN_ARROW}
     Close Browser
-
-*** Keywords ***
-Open the website and maximize window
-    Open Browser    ${URL}    ${BROWSER}    options=add_experimental_option("excludeSwitches", ["enable-logging"])
-    Maximize Browser Window
